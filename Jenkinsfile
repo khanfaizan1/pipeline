@@ -1,9 +1,15 @@
 pipeline {
-    agent none 
-
+    agent any
     stages {
-        stage("foo") { 
-            echo "hello" 
+        stage('Example') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
     }
 }
